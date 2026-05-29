@@ -1,0 +1,68 @@
+
+SELECT
+    TrackId,
+    Milliseconds
+FROM Tracks
+WHERE Milliseconds >= 5000000
+ORDER BY TrackId;
+
+
+SELECT 
+InvoiceId,
+InvoiceDate, 
+CustomerId,
+Total
+FROM Invoices 
+WHERE Total > 1 and Total < 5 and CustomerId < 59 and CustomerId > 55  
+
+SELECT 
+Name
+FROM Tracks
+Where Name Like "All%" 
+
+SELECT 
+Email
+FROM Customers 
+WHERE Email Like "J%" and Email Like "%gmail.com"
+
+SELECT 
+InvoiceId,
+BillingCity,
+Total
+FROM Invoices
+WHERE BillingCity = "Brasília" Or BillingCity = "Edmont" Or BillingCity = "Vancouver" 
+ORDER BY InvoiceId Desc 
+
+
+SELECT 
+CustomerId, 
+SupportRepId 
+FROM Customers
+ORDER BY SupportRepId Desc;
+
+SELECT 
+AlbumId, Count (*) As quant
+FROM Tracks  
+ORDER BY AlbumId
+Having Count >= 12;
+
+SELECT
+InvoiceId,
+BillingCity,
+Total
+FROM 
+Invoices
+WHERE 
+BillingCity In ( 'Brasília', ' Edmont', 'Vancouver')
+ORDER BY
+InvoiceId Desc; 
+
+SELECT 
+CustomerId,
+Count (*) as numero_de_pedidos 
+FROM 
+Invoices 
+GROUP BY 
+CustomerId
+ORDER BY
+numero_de_pedidos Desc; pra
