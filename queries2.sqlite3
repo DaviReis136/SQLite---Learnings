@@ -8,7 +8,6 @@ FROM ( Artists N INNER JOIN albums albumId
 ON n.artistId = albumId.artistId )
 Where Name Like "Led%" 
 
-
 Select a.Name, t.Title, up.UnitPrice 
 From ((artists a INNER JOIN albums t
 ON a.artistId = t.artistId )
