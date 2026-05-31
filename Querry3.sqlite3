@@ -1,0 +1,48 @@
+Select t.title, n.name
+From albums t LEFT JOIN tracks n 
+ON t.albumId = n.albumId
+Where Title = "Californication"
+
+# Discorve CustomerId
+
+#SELECT CustomerId,
+#FirstName 
+#FROM Customers 
+#WHERE FirstName = "František" 
+
+SELECT Count (InvoiceId) As C_I,FirstName, LastName, City, email
+FROM Customers, Invoices
+WHERE Customers.CustomerId ="5"
+And Invoices.CustomerId ="5"
+
+SELECT tracks.Name, Title, artists.artistId,  TrackId
+FROM Tracks, albums, Artists
+Where Title = "For Those About To Rock We Salute You" and TrackId ="12"
+
+
+SELECT 
+e1.FirstName || '   ' || e1.LastName as EmployeeName, 
+e2.FirstName || '   '|| e2.LastName As ManagerName,
+e1.ReportsTo
+FROM Employees e1
+LEFT Join Employees e2 On e1.ReportsTo = e2.EmployeeId 
+ORDER BY EmployeeName;
+
+SELECT ar.ArtistId, ar.Name
+FROM artists ar
+LEFT JOIN albums al
+ON ar.ArtistId = al.ArtistId
+WHERE al.AlbumId IS NULL;
+
+SELECT FirstName, LastName 
+FROM Employees 
+ORDER BY LastName Desc;
+UNION 
+SELECT FirstName, LastName 
+FROM CUSTOMERS 
+ORDER BY LastName Desc;
+
+SELECT FirstName, c.City, bc.BillingCity
+FROM Customers c LEFT JOIN Invoices bc 
+ON c.customerId = bc.customerId
+Where City Not Like BillingCity
