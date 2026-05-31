@@ -1,0 +1,21 @@
+SELECT n.Name, al.albumId 
+FROM ( Artists N INNER JOIN album al
+ON n.artistId = al.artistId )
+Where Name Like "Led%" 
+
+SELECT n.Name, albumId, Count(*) As total
+FROM ( Artists N INNER JOIN albums albumId
+ON n.artistId = albumId.artistId )
+Where Name Like "Led%" 
+
+
+Select a.Name, t.Title, up.UnitPrice 
+From ((artists a INNER JOIN albums t
+ON a.artistId = t.artistId )
+INNER JOIN Tracks up ON t.albumId = up.albumId)
+WHERE a.Name = "Audioslave" 
+
+select FirstName, ln.LastName, I.InvoiceId
+From Customers ln Left Join Invoices I ON ln.CustomerId = I.CustomerId
+Where I.InvoiceId like Null,
+ORDER BY FirstName;
