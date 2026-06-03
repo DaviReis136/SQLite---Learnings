@@ -1,1 +1,33 @@
+Select
+Fn.FirstName ||'' || LN.LastName ||'' || i.InvoiceId As Name_ID
+From Customers Fn, Customers LN Left Join Invoices i
+On LN.CustomerID = i.customerId
+Where Name_ID Like "AstridGruber%"
 
+SELECT 
+FIRSTNAME ||" "|| LASTNAME AS Name,
+Date("now") As Today,
+HireDate,
+Date("now") - HireDate As Years_Like_employeer
+From employees
+Where Years_Like_employeer >= 15
+
+Select 
+CustomerId,
+Address,
+Upper(City || ' ' || Country) As Place
+From Customers
+
+Select 
+FirstName || ' ' || LastName As Name,
+Lower (Substr(FirstName,1,4) || '' ||
+Substr(LastName,1,2) ) As Name2
+From Employees
+
+SELECT
+City,
+CustomerId,
+Count (City) As Citys
+From Customers 
+Group By City
+Order By Citys Desc
